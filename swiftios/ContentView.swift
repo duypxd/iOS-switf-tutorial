@@ -9,13 +9,29 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack {
+            Color(.white).ignoresSafeArea()
+            VStack(alignment: .leading, spacing: 14) {
+                Image("sea").resizable(capInsets: EdgeInsets())
+                        .cornerRadius(16)
+                        .aspectRatio(contentMode: .fit).padding(.all)
+                HStack {
+                    Text("Biển Caribe").font(.title).fontWeight(.semibold)
+                    Spacer()
+                    Image(systemName: "star")
+                    Image(systemName: "star")
+                    Image(systemName: "star")
+                    Image(systemName: "star")
+                    Image(systemName: "star")
+                }
+               
+                Text("Ở đây có rất nhiều cớp biển, List cướp biển nổi tiếng bên dưới: ")
+                    .font(.headline)
+                TodoListView()
+            }.padding(16)
         }
-        .padding()
+        
+        
     }
 }
 
